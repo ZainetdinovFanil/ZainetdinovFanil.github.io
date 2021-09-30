@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <title>Document</title>
+
+
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.17/esri/themes/dark-blue/main.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="sceneContainer"></div>
+    <form enctype="multipart/form-data" method="post" id="uploadForm"><!--Тег имеет три атрибута. Атрибут enctype указывает медиа-тип передаваемых данных. Для передачи файла enctype устанавливается как multipart/form-data. Следующий атрибут method. Он определяет метод HTTP, который будет запускать эта форма. Для method задается значение POST - метод, который отправляет данные на сервер. Для атрибута id устанавливается значение uploadForm, именно так форма будет указана в файле main.css. -->
+        <div class="field">
+            <label class="file-upload"><!--определяет надпись для поля. -->
+              <span><strong>Upload shapefile .zip</strong></span><!--содержит текст надписи, Upload shapefile .zip и указывает, что она написана в строгом текстовом стиле.-->
+              <input type="file" name="file" id="inFile" /><!--указывает, что поле формы будет принимать файл в качестве входных данных, что он называется file и что к нему можно получить доступ в другом месте кода приложения с помощью идентификатора inFile-->
+            </label>
+          </div>
+    </form>
+
+
+        <script src="https://js.arcgis.com/4.17/"></script>
+        <script src="main.js"></script>
+</body>
+</html>
