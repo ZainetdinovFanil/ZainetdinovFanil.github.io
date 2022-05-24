@@ -1,0 +1,174 @@
+html{
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	
+font-style: normal;
+color: #FFFFFF;
+
+}
+*,
+*::after,
+*::before{
+	box-sizing: inherit;
+}
+a{
+	text-decoration: none;
+}
+body{
+	
+font-family: 'Montserrat';
+font-style: normal;
+color: #FFFFFF;
+}
+.container{
+	max-width: 1200px;
+	padding: 0 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header {
+  margin: 0;
+  width: 100%;
+  height: 850px;
+  background: #1D1D1D;
+}
+#root {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+  }
+  
+  #root>div {
+	position: absolute;
+	background: radial-gradient(ellipse at center, rgba(177, 198, 219, 1) 2%, rgba(5, 63, 118, 1) 100%);
+	border-radius: 100%;
+	/* filter:blur(1px); */
+	animation: shine infinite alternate;
+  }
+  
+  @keyframes shine {
+	0% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+	20% {
+	  transform: scale(.9);
+	  opacity: .8;
+	}
+	40% {
+	  transform: scale(1);
+	  opacity: .9;
+	}
+	40% {
+	  transform: scale(.2);
+	  opacity: .2;
+	}
+	60% {
+	  transform: scale(.2);
+	  opacity: .1;
+	}
+	80% {
+	  transform: scale(.5);
+	  opacity: .5;
+	}
+	100% {
+	  transform: scale(.9);
+	  opacity: .9;
+	}
+  }
+
+  .header__left,.header__right{
+	  z-index: 2;
+  }
+
+.header__inner{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 260px;
+}
+
+.header__left{
+	
+}
+.header__left-title{
+	font-weight: 500;
+	font-size: 92px;
+	line-height: 112px;
+	margin-top: 65px;
+}
+.header__left-text{
+	
+	font-weight: 700;
+	font-size: 41.5px;
+	line-height: 51px;
+	background: linear-gradient(270deg, #FAFF00 37.78%, #383819 107.4%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+
+}
+.header__left-image{
+	position: relative;
+	top: -225px;
+	left: 96px;
+	z-index: -1;
+}
+
+.header__right{
+
+}
+.header__right-title{
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 30px;
+	text-transform: uppercase;
+	margin-bottom: 65px;
+}
+.header__right-blocks{
+display: flex;
+margin-right: 100px;
+}
+.header__right-block{
+	width: 180px;
+	height: 280px;
+	border-radius:20px;
+	padding-left: 10px;
+	padding-top: 160px;
+}
+.header__right-block:nth-child(1){
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook_1.png);
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+	background-position: center center;
+	margin-right: 20px;
+}
+.header__right-block:nth-child(2){
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/book.png);
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+	background-position: center center;
+	margin-right: 20px;
+}
+.header__right-block:nth-child(3){
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/sert_1.png);
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+	background-position: center center;
+}
+.header__right-text{
+
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	margin-bottom: 10px;
+
+}
+.header__right-txt{
+	width: 80%;
+font-weight: 700;
+font-size: 17px;
+line-height: 21px;
+}
