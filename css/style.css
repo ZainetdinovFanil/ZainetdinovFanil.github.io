@@ -32,12 +32,16 @@ header {
   width: 100%;
   height: 850px;
   background: #1D1D1D;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 #root {
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 850px;
 	overflow: hidden;
+
   }
   
   #root>div {
@@ -90,14 +94,23 @@ header {
 }
 
 .header__left{
-	
 }
+.header__left-edupartner{
+	display: none;
+	transition: 1s;
+	transform: translateY(70%);
+	opacity: 0;
+	height: 300px;
+
+}
+
 .header__left-title{
 	font-weight: 500;
 	font-size: 92px;
 	line-height: 112px;
 	margin-top: 65px;
 }
+
 .header__left-text{
 	
 	font-weight: 700;
@@ -118,7 +131,11 @@ header {
 }
 
 .header__right{
+	margin-bottom: 215px;
+}
 
+.header__right-top{
+	height: 95px;
 }
 .header__right-title{
 	font-weight: 700;
@@ -126,10 +143,21 @@ header {
 	line-height: 30px;
 	text-transform: uppercase;
 	margin-bottom: 65px;
+
+
+	
+	display: none;
+	transition: 1s;
+	transform: translateY(200%);
+	opacity: 0;
 }
+
+
 .header__right-blocks{
 display: flex;
-margin-right: 100px;
+margin-right:50px;
+transition: 1s;
+
 }
 .header__right-block{
 	width: 180px;
@@ -137,26 +165,63 @@ margin-right: 100px;
 	border-radius:20px;
 	padding-left: 10px;
 	padding-top: 160px;
+	margin-right: 20px;
 }
-.header__right-block:nth-child(1){
+
+
+
+
+.header-bg{
+	position: absolute;
+	
+
+	width: 170px;
+	height: 260px;
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook-bg.png);
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+	background-position: center center;
+	transition: 1s;
+	z-index: -1;
+	border-radius: 20px;
+}
+
+.header__right-block:nth-child(2){
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook_1.png);
 	/* background-repeat: no-repeat;
 	background-size: cover; */
 	background-position: center center;
-	margin-right: 20px;
+	transition: 1s;
+	border-radius: 20px;
 }
-.header__right-block:nth-child(2){
+.header__right-block:nth-child(3){
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/book.png);
 	/* background-repeat: no-repeat;
 	background-size: cover; */
 	background-position: center center;
-	margin-right: 20px;
 }
-.header__right-block:nth-child(3){
+.header__right-block:nth-child(4){
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/sert_1.png);
 	/* background-repeat: no-repeat;
 	background-size: cover; */
 	background-position: center center;
+}
+.header__right-block:nth-child(5){
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/edupartner.png);
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+	background-position: center center;
+	/* display: none; */
+	width: 0;
+	transition: 1s;
+	opacity: 0;
+	overflow: hidden;
+
+	
+}
+.header__right-block:nth-child(5).transition_zero{
+
+	transition: 0s;
 }
 .header__right-text{
 
@@ -171,4 +236,250 @@ margin-right: 100px;
 font-weight: 700;
 font-size: 17px;
 line-height: 21px;
+}
+
+
+
+
+
+.platform{
+	
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/black-white.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	height: 800px;
+	margin-bottom: 150px;
+}
+
+.platform__inner{
+	display: flex;
+	justify-content: space-between;
+	height: 800px;
+}
+
+.platform__left{
+	width: 595px;
+	padding-left: 5px;
+    align-self: center;
+}
+.platform__right{
+	width: 480px;
+    align-self: center;
+}
+.platform__right-title{
+
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 49px;
+	color: #FAFF00;
+	margin-bottom: 30px;
+}
+.platform__right-text{
+	font-weight: 500;
+	font-size: 20px;
+	line-height:30px ;
+	color: rgba(229, 229, 229, 0.85);
+	margin-bottom: 15px;
+}
+
+.header__left-eduexp{
+	position: relative;
+	display: none;
+	transition: 1s;
+	transform: translateY(30%);
+	opacity: 0;
+}
+.header__left-txt{
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 31px;
+	margin-bottom: 30px;
+}
+.header__left-txt::before{
+	width: 80px;
+	height: 5px;
+	position: absolute;
+	content: '';
+	background-color: #FAFF00;
+	top: -30px;
+}
+.header__left-img{
+	margin-bottom: 55px;
+}
+.header__left-btn{
+	display: block;
+	font-weight: 600;
+	font-size: 20px;
+	line-height:  26px;
+	color: #FFFFFF;
+
+	width: 382px;
+	height: 66px;
+	padding: 20px 40px;
+	
+	border: 2px solid #FAFF00;
+	border-radius: 20px;
+	position: relative;
+	transition: 0.5s;	
+}
+.header__left-btn::after{
+	position: absolute;
+	content: '⟶';
+	width: 41px;
+	font-size: 30px;
+	right: 32px;
+}
+.header__left-btn:hover{
+	cursor: pointer;
+	background: #FAFF00;
+	border: 2px solid #FAFF00;
+	box-shadow: 0px 0px 20px #FAFF00;
+	border-radius: 20px;
+	color: #1D1D1D;
+}
+
+
+
+
+
+
+
+.opportunities{
+	
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/yellow-white.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	height: 1185px;
+	margin-bottom: 150px;
+}
+.opportunities-title{
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 49px;
+	color: #1D1D1D;
+	padding-top: 100px;
+	padding-bottom: 65px;
+	position: relative;
+}
+.opportunities-title::before{
+	position: absolute;
+	content: '';
+	top: 80px;
+	width: 180px;
+	background-color: #1D1D1D;
+	height: 7px;
+}
+.opportunities-line{
+	height: 2px;
+	background-color: rgba(0, 0, 0, 0.25);
+	padding: 0;
+	margin: 0;
+}
+.opportunities-block{
+	display: flex;
+	padding-top: 20px;
+}
+.opportunities-block-pt{
+	padding-top: 44px;
+}
+.opportunities__left{
+}
+.opportunities__left-text{
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 39px;
+	color: #1D1D1D;
+	width: 680px;
+}
+.opportunities__right-text{
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	color: rgba(29, 29, 29, 0.85);
+	max-width: 480px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.opportunities-comment{
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 39px;
+	color: rgba(43, 43, 43, 0.55);
+	width: 680px;
+
+}
+
+
+
+.try{
+	margin-bottom: 100px;
+}
+
+
+.try-btn{
+	display: block;
+	font-weight: 600;
+	font-size: 20px;
+	line-height:  26px;
+	color: #1D1D1D;
+	
+	width: 479px;
+	height: 66px;
+	padding: 20px 40px;
+	
+	border: 2px solid #1D1D1D;
+	border-radius: 20px;
+	position: relative;
+	transition: 0.5s;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.try-btn::after{
+	position: absolute;
+	content: '⟶';
+	width: 41px;
+	font-size: 30px;
+	right: 32px;
+}
+
+.try-btn:hover{
+	cursor: pointer;
+	background: #1D1D1D;
+	border: 2px solid #1D1D1D;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 20px;
+	color: #fff;
+}
+
+
+.video{
+
+}
+.video-title{
+
+}
+.video-block{
+	width: 380px;
+	height: 228px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Всплыв текста */
+
+.header-show{
+	display: block;
+	transform: translateY(0%);
+	opacity: 1;
+
 }
