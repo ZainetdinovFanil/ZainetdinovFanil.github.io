@@ -26,7 +26,6 @@ color: #FFFFFF;
 	margin-left: auto;
 	margin-right: auto;
 }
-
 header {
   margin: 0;
   width: 100%;
@@ -159,6 +158,7 @@ margin-right:50px;
 transition: 1s;
 
 }
+
 .header__right-block{
 	width: 180px;
 	height: 280px;
@@ -166,8 +166,20 @@ transition: 1s;
 	padding-left: 10px;
 	padding-top: 160px;
 	margin-right: 20px;
-}
+	position: relative;
 
+}
+.header__right-block:hover{
+	cursor: pointer;
+}
+.header__right-block::after{
+	position: absolute;
+	content: '';
+	height: 3px;
+	width: 25px;
+	background-color: #FAFF00;
+	top: 150px;
+}
 
 
 
@@ -175,8 +187,8 @@ transition: 1s;
 	position: absolute;
 	
 
-	width: 170px;
-	height: 260px;
+	width: 1px;
+	height: 1px;
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook-bg.png);
 	/* background-repeat: no-repeat;
 	background-size: cover; */
@@ -188,28 +200,28 @@ transition: 1s;
 
 .header__right-block:nth-child(2){
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook_1.png);
-	/* background-repeat: no-repeat;
-	background-size: cover; */
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 	transition: 1s;
 	border-radius: 20px;
 }
 .header__right-block:nth-child(3){
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/book.png);
-	/* background-repeat: no-repeat;
-	background-size: cover; */
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 }
 .header__right-block:nth-child(4){
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/sert_1.png);
-	/* background-repeat: no-repeat;
-	background-size: cover; */
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 }
 .header__right-block:nth-child(5){
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/edupartner.png);
-	/* background-repeat: no-repeat;
-	background-size: cover; */
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 	/* display: none; */
 	width: 0;
@@ -229,7 +241,6 @@ transition: 1s;
 	font-size: 12px;
 	line-height: 15px;
 	margin-bottom: 10px;
-
 }
 .header__right-txt{
 	width: 80%;
@@ -262,6 +273,9 @@ line-height: 21px;
 	width: 595px;
 	padding-left: 5px;
     align-self: center;
+}
+.platform__left-img{
+	width: 100%;
 }
 .platform__right{
 	width: 480px;
@@ -456,20 +470,183 @@ line-height: 21px;
 
 
 .video{
-
+	background: #06080A;
 }
 .video-title{
-
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 49px;
+	color: #FAFF00;
+	padding-top: 120px;
+	display: block;
+	margin-left: auto;
+	width: 415px;
 }
 .video-block{
+	margin-top: 100px;
+	display: flex;
+}
+.video-video{
 	width: 380px;
-	height: 228px;
+	height: 229px;
+
+}
+.video-video__mid{
+	width: 380px;
+	height: 229px;
+
+}
+.video-arrow-right, .video-arrow-left{
+	width: 200px;
+	height: 80px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 74px;
+}
+
+.video-arrow-right{
+	margin-right: auto;
+}
+.video-arrow-left{
+	margin-left: auto;
+	transform: rotate(180deg);
+}
+
+
+.video-block-bottom{
+	width: 380px;
+	height: 7px;
+	background:#FAFF00;
+	margin-top: 150px;
+}
+
+
+.video-btn{
+	display: block;
+	font-weight: 600;
+	font-size: 20px;
+	line-height:  26px;
+	color: #FAFF00;
+
+	width: 401px;
+	height: 66px;
+	padding: 20px 40px;
+	
+	border: 2px solid #FAFF00;
+	border-radius: 20px;
+	position: relative;
+	transition: 0.5s;	
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+}
+.video-btn::after{
+	position: absolute;
+	content: '⟶';
+	width: 41px;
+	font-size: 30px;
+	right: 32px;
+}
+.video-btn:hover{
+	cursor: pointer;
+	background: #FAFF00;
+	border: 2px solid #FAFF00;
+	box-shadow: 0px 0px 20px #FAFF00;
+	border-radius: 20px;
+	color: #1D1D1D;
 }
 
 
 
 
+.slider{
+	
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/black-planet.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding-bottom: 50px;
 
+}
+.slider-inner{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 224px;
+}
+.slider-block{
+	margin-top: 45px;
+	width: 380px;
+	height: 565px;
+	background: linear-gradient(339.46deg, rgba(29, 29, 29, 0.3854) 8.31%, rgba(29, 29, 29, 0.94) 95.53%);
+	backdrop-filter: blur(20px);
+	border-radius: 30px;
+}
+.slider-block-mid{
+	margin-top: 0;
+	background: linear-gradient(337.52deg, rgba(244, 244, 244, 0.4606) -24.51%, rgba(244, 244, 244, 0) 119.94%);
+}
+.slider-block-shadow{
+	display: none;
+}
+.slider-title{
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 31px ;
+	color: rgba(250, 255, 0, 0.65);
+	margin: auto;
+	margin-top: 45px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.slider-block-mid .slider-title{
+
+	color: #FAFF00;
+}
+.slider-text{
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+	color: rgba(255, 255, 255, 0.3);
+	margin-left: 34px;
+	margin-right: 34px;
+}
+
+
+
+.slider-block-mid .slider-text{
+	
+color: rgba(255, 255, 255, 0.95);
+}
+.slider-link{
+
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+	text-decoration-line: underline;
+	margin-left: 34px;
+	margin-right: 34px;
+	display: block;
+	
+	color: rgba(250, 255, 0, 0.37);
+}
+
+.slider-block-mid .slider-link{
+	color: rgba(250, 255, 0, 0,95);
+	
+}
+.slider-arrows{
+	display: flex;
+	margin-top: 86px;
+	gap: 98px;
+}
+.slider-arrow-left{
+	margin-left: auto;
+
+}
+.slider-arrow-right{
+	margin-right: auto;
+}
 
 
 
@@ -483,3 +660,460 @@ line-height: 21px;
 	opacity: 1;
 
 }
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+	.header{
+		height: auto;
+
+	}
+	.header__left{
+		margin-left: 30px;
+	}
+	.header__left-title {
+		font-size: 56px;
+		line-height: 70px;
+		margin-top: 35px;
+	}
+	.header__left-text {
+		font-size: 35px;
+		line-height: 40px;
+	}
+	.header__left-image {
+		top: -194px;
+		left: 49px;}
+
+	.header__left-img {
+		width: 160px;
+		margin-bottom: 30px;
+	}
+	.header__left-txt::before{
+		width: 40px;
+	}
+
+	.header__left-btn {
+		font-size: 18px;
+		line-height: 24px;
+		width: 330px;
+		height: 50px;
+		padding: 7px 16px;
+	}
+
+
+
+
+	.header__right-title,.header__left-txt {
+		font-size: 18px;
+		line-height: 24px
+	}
+	.header__right-block{
+		width: 120px;
+		height: 187px;
+		padding-top: 95px;
+		padding-right: 10px;
+	}
+	.header-bg{
+	}
+	.header__right-text{
+		font-size: 8px;
+		line-height: 12px;
+	}
+	.header__right-txt {
+		font-size: 10px;
+		line-height: 14px;}
+	.header__right-block::after{
+		top: 80px;
+	}
+
+
+	.platform__left {
+		width: 400px;
+	}
+	.platform__right-title,.opportunities-title,.video-title{
+		font-size: 30px;
+    	line-height: 40px;
+	}
+
+	.platform__right-text,.opportunities__right-text,.try-btn,.slider-text,.slider-link,.video-btn{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.opportunities-block{
+		justify-content: space-between;
+	}
+	.opportunities__left-text,.opportunities-comment {
+		display: block;
+		max-width: 500px;
+		font-size: 24px;
+		line-height: 30px;
+	}
+	.opportunities__right-text {
+		max-width: 400px;
+		display: block;
+	}
+	.platform,.opportunities{
+		margin-bottom: 100px;
+	}
+	.try-btn{
+		width: 400px;
+	}
+
+
+
+
+	.video-title{
+		padding-top: 80px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.video-arrow-right,.video-arrow-left{
+		width: 100px;
+		height: 40px;
+	}
+	.video-text{
+		margin: auto;
+	}
+	.video-block{
+		margin-top: 50px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.video-btn{
+		margin-top: 80px;
+	}
+	.video-block-bottom{
+		margin-top: 80px;
+	}
+
+	.slider-inner{
+		padding-top: 100px;
+	}
+	.slider-block{
+		height: 500px;
+		width: 300px;
+	}
+	.slider-arrows{
+		margin-top: 30px;
+	}
+	.slider-arrows-svg{
+		width: 23px;height: 45px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.header{
+		height: 700px;
+	}
+	.header__right-block {
+		margin-right: 5px;	
+		width: 110px;
+	}
+	.header__right-blocks{
+		margin-right: 0;
+	}
+	.header__right-title, .header__left-txt {
+		font-size: 16px;
+		line-height: 18px;
+		margin-bottom: 20px;
+	}
+	.header__left-title{
+		font-size: 38px;
+		line-height: 46px;
+	}
+	.header__left-text {
+		font-size: 30px;
+		line-height: 36px;
+	}
+	.header__left-image {
+		top: -147px;
+		left: 44px;
+		width: 200px;
+	}
+	.header__right-top{
+		height: auto;
+	}
+	.header__right {
+		margin-bottom: 200px;
+	}
+	.platform__inner,.slider-inner{
+		height: auto;
+		padding-top: 50px;
+		justify-content: space-around;
+		
+	}
+	.platform__right-title, .opportunities-title, .video-title {
+		font-size: 22px;
+		line-height: 30px;
+	}
+	.platform__right-text, .opportunities__right-text, .try-btn, .slider-text, .slider-link, .video-btn,.video-text {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.platform__right {
+		width: 300px;
+	}
+	.platform{
+		padding-bottom: 50px;
+		height: auto;
+	}
+	.platform, .opportunities,.try{
+		margin-bottom: 50px;
+	}
+	.opportunities__left-text, .opportunities-comment {
+		max-width: 489px;
+		font-size: 18px;
+		line-height: 24px;
+	}
+	.opportunities-title,.video-title{
+		padding-top: 50px;
+		padding-bottom: 30px;
+	}
+	.opportunities-block {
+		padding-top: 5px;
+	}
+	.opportunities__right-text{
+		margin-bottom: 5px;
+	}
+	.opportunities-comment{
+		margin-bottom: 50px;
+	}
+	.opportunities{
+		height: auto;
+	}
+	.try-btn {
+		width: 312px;
+		height: 44px;
+		padding: 10px 19px}
+	.video-block{
+		margin-top: 10px;
+	}
+	.video-video__mid,.video-video {
+		width: 320px;
+		height: 181px;
+	}
+	.video-arrow-right{
+		margin-right: 20px;
+	}
+	.video-btn {
+		margin-top: 50px;
+		width: 300px;
+		height: 45px;
+		padding: 10px 20px;
+	}
+	.video-block-bottom{
+		width: 200px;
+		margin-top: 50px;
+	}
+	.slider-title {
+		font-size: 20px;
+		line-height: 24px;
+		margin-top: 20px;
+		margin-bottom: 15px;
+	}
+	.slider-block {
+		height: 320px;
+		width: 200px;
+	}
+	.slider-text{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+
+@media (max-width: 768px) {
+
+	.header__inner{
+		display: block;
+		padding-top: 50px;
+	}
+	.header__left,.header__left-edupartner{
+		height: 200px;
+	}
+	.header__left-img{
+		width: 90px;
+	}
+	.header__right-title, .header__left-txt {
+		font-size: 12px;
+		line-height: 15px;
+		margin-bottom: 10px;
+	}
+	.header__left-btn {
+		font-size: 14px;
+		line-height: 18px;
+		width: 270px;
+		height: 36px;
+		padding: 5px 10px;
+	}
+	.header__left{
+		margin-left: 100px;
+	}
+	.header__right{
+		margin-bottom: 0;
+		padding-bottom: 50px;
+		width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 30px;
+	}
+	.header{
+		height: auto;
+	}
+
+
+
+	.platform__left,.platform__right{
+		width: 250px;
+	}
+	.opportunities__left-text  {
+		max-width: 400px;}
+	.opportunities-comment{
+		max-width: 380px;
+	}
+
+	.slider-block{
+		width: 160px;
+		height: 280px;
+	}
+
+	.slider-link,.slider-text {
+		
+		font-size: 10px;
+		line-height: 14px;
+	
+		margin-left: 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	.opportunities__left-text{
+		max-width: 290px;
+	}
+	.platform__left, .platform__right {
+		width: 200px;
+	}
+	.video-block{
+		margin-left: 0;
+		margin-right: 0;
+
+	}
+	.video-video__mid, .video-video {
+		width: 200px;
+		height: 110px;
+	}
+	.video-arrow-right, .video-arrow-left{
+		margin-top: 25px;
+		width: 50px;
+    height: 20px;
+	}
+	.slider-block{
+		width: 120px;
+	}
+	.slider-title {
+		font-size: 12px;
+		line-height: 16px;
+		margin-top: 20px;
+		margin-bottom: 5px;
+	}
+	.slider-link, .slider-text{
+		margin-left: 7px;
+		margin-right: 6px;
+		font-size: 9px;
+		line-height: 12px;
+	}
+	.slider-arrows-svg {
+		width: 20px;
+		height: 30px;
+	}
+}
+
+
+
+@media (max-width: 480px) {
+	.header__left {
+		margin-left: 10px;
+	
+	}
+	.header__right-txt {
+		font-size: 8px;
+		line-height: 10px;
+	}
+	.header__right-text {
+		font-size: 6px;
+		line-height: 10px;
+	}
+	.header__right{
+		width: 100%;
+	}
+	.header__right-block {
+		width: 82px;
+	}
+	.platform__right-title, .opportunities-title, .video-title {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.platform__left, .platform__right {
+		width: 140px;
+	}
+	.platform__right-text, .opportunities__right-text, .try-btn, .slider-text, .slider-link, .video-btn, .video-text {
+		font-size: 10px;
+		line-height: 14px;
+	}
+	.opportunities__left-text, .opportunities-comment {
+		font-size: 14px;
+		line-height: 18px;
+		max-width: 130px;
+	}
+	.opportunities-title::before{
+		display: none;
+	}
+	.try-btn {
+		width: 270px;
+		height: 32px;
+		padding: 5px 10px;
+	}
+	.video-video__mid, .video-video {
+		width: 130px;
+		height: 73px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.video-arrow-right, .video-arrow-left{
+		display: none;
+	}
+	.video-title{
+		width: 300px;
+	}
+	.slider-inner{
+		display: block;
+	}
+	.slider-block{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+    padding-bottom: 10px;
+		margin-top: 10px;
+	}
+	
+}
+@media (max-width: 320px) {
+
+}
+
+
+
+
+
+
+
+
+
+

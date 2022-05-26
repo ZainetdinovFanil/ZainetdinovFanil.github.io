@@ -13,7 +13,7 @@
 </head>
 <body>
   <header class="header">
-    <div id="root">
+    <div class="root" id="root">
     </div>
       <div class="container">
         <div class="header__inner">
@@ -62,7 +62,7 @@
     <div class="container">
       <div class="platform__inner">
         <div class="platform__left">
-          <img src="https://eduexp.ru/wp-content/uploads/2021/09/smartmockups.png" alt="notebook">
+          <img src="https://eduexp.ru/wp-content/uploads/2021/09/smartmockups.png" alt="notebook" class="platform__left-img">
         </div>
         <div class="platform__right">
           <h2 class="platform__right-title">О платформе </h2>
@@ -127,14 +127,67 @@
 
   <section class="video">
     <div class="container">
-      <h3 class="video-title"></h3>
-
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/0-C0lCPFTj8?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3 class="video-title">Отзывы партнеров </h3>
+      <div class="video-block">
+        <iframe class="video-video" width="560" height="315" src="https://www.youtube.com/embed/0-C0lCPFTj8?autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img src="https://eduexp.ru/wp-content/uploads/2021/09/arrow.png" alt="arrow" class="video-arrow-right">
+        <p class="video-text">Тут будет текст , название партнера и тд</p>
+      </div>
+      <div class="video-block">
+        <p class="video-text">Тут будет текст , название партнера и тд </p>
+        <img src="https://eduexp.ru/wp-content/uploads/2021/09/arrow.png" alt="arrow" class="video-arrow-left">
+        <iframe class="video-video__mid" width="560" height="315" src="https://www.youtube.com/embed/0-C0lCPFTj8?autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-block">
+        <iframe class="video-video" width="560" height="315" src="https://www.youtube.com/embed/0-C0lCPFTj8?autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img src="https://eduexp.ru/wp-content/uploads/2021/09/arrow.png" alt="arrow" class="video-arrow-right">
+        <p class="video-text">Тут будет текст , название партнера и тд</p>
+      </div>
+      
+      <a href="#" class="video-btn">Стать частью платформы</a>
+      <div class="video-block-bottom"></div>
     </div>
-  </section>
+  <div class="slider">
+    <div class="container">
+      <div class="slider-inner">
+        <div class="slider-block slider-block-shadow">
+          <h3 class="slider-title">50% комиссия</h3>
+          <p class="slider-text">Вы занимаетесь образовательной деятельностью, но у вас нет лицензии или её срок действия истекает? Мы готовы помочь пролицензировать ваш курс, составить методическую часть или провести повышение квалификации преподавателей и спикеров. Подробнее: ЧОУ ДПО «Приуральский центр образования»</p>
+        </div>
+        <div class="slider-block">
+          <h3 class="slider-title">40% комиссия</h3>
+          <p class="slider-text">Вы занимаетесь образовательной деятельностью, но у вас нет лицензии или её срок действия истекает? Мы готовы помочь пролицензировать ваш курс, составить методическую часть или провести повышение квалификации преподавателей и спикеров. Подробнее: ЧОУ ДПО «Приуральский центр образования»</p>
+        </div>
+        <div class="slider-block slider-block-mid">
+          <h3 class="slider-title">30% комиссия</h3>
+          <p class="slider-text">Вы лицензированная компания с собственными курсами, откройте для себя еще один канал продаж - платформа EduExp. 
+            *От нас выгодные комиссионые продвижения Ваших курсов </p>
+        </div>
+        <div class="slider-block">
+          <h3 class="slider-title">30% комиссия</h3>
+          <p class="slider-text">Вы эксперт/преподаватель и уже имеете свой авторский курс, начните сотрудничество уже сегодня!</p>
+          <a href="https://www.youtube.com/watch?v=-FX-RVKvnAw&ab_channel=EduExpRu" class="slider-link">Инструкция по добавлению курса</a>
+        </div>
+        <div class="slider-block slider-block-shadow">
+          <h3 class="slider-title">50% комиссия</h3>
+          <p class="slider-text">Вы занимаетесь образовательной деятельностью, но у вас нет лицензии или её срок действия истекает? Мы готовы помочь пролицензировать ваш курс, составить методическую часть или провести повышение квалификации преподавателей и спикеров. Подробнее: ЧОУ ДПО «Приуральский центр образования»</p>
+        </div>
+      </div>
+      <div class="slider-arrows">
+        <div class="slider-arrow-left"><svg class="slider-arrows-svg" width="47" height="91" viewBox="0 0 47 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 2L4 45.5L45 89" stroke="#C4C4C4"  stroke-opacity="0.37" stroke-width="5"/>
+          </svg>
+          </div>
+        <div class="slider-arrow-right"><svg class="slider-arrows-svg" width="47" height="91" viewBox="0 0 47 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2L43 45.5L2 89" stroke="#C4C4C4" stroke-opacity="0.37" stroke-width="5"/>
+          </svg>          
+        </div>
 
+      </div>
+    </div>
+  </div>
 
-
+</section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
 </body>
