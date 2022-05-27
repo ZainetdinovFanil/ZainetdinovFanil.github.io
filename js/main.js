@@ -172,6 +172,7 @@ const params = {
 
 
     
+
   let opportunitiesRight = document.querySelectorAll('.opportunities__right');
   console.log(opportunitiesRight[2].offsetWidth);
   opportunitiesRight[5].style.width=opportunitiesRight[2].offsetWidth +'px';
@@ -181,7 +182,137 @@ const params = {
   
 
 
-  
+  //звезды высотой родительского блока
   let root=document.querySelector('.root');
   
   root.style.height=header.offsetHeight +'px';
+
+
+
+//прыжки стрелок
+
+  let videoArrowRights = document.querySelectorAll('.video-arrow-right');
+  let videoArrowLeft = document.querySelector('.video-arrow-left');
+  arrowRightJump(videoArrowRights[0]);
+  arrowRightJump(videoArrowRights[1]);
+  arrowRightJumpBack(videoArrowLeft);
+  function arrowRightJump(arrow){
+    if(header.offsetWidth>1200){
+      arrow.style.marginRight=20+'px';
+      arrow.style.marginLeft=115+'px';
+    }
+    else if(header.offsetWidth>768){
+      arrow.style.marginRight=10+'px';
+      arrow.style.marginLeft=30+'px';
+    }
+    else{
+      arrow.style.marginRight=5+'px';
+      arrow.style.marginLeft=20+'px';
+
+    }
+    setTimeout(function(){ 
+      arrowRightJumpBack(arrow);
+    }, 1500);
+  };
+  function arrowRightJumpBack(arrow){
+    arrow.style.marginLeft=20+'px';
+    if(header.offsetWidth>1200){
+      arrow.style.marginRight=20+'px';
+      arrow.style.marginRight=115+'px';
+    }
+    else if (header.offsetWidth>768){
+      arrow.style.marginRight=10+'px';
+      arrow.style.marginRight=30+'px';      
+    }
+    else{
+      arrow.style.marginLeft=5+'px';
+      
+      arrow.style.marginRight=20+'px';     
+    }
+    setTimeout(function(){ 
+      arrowRightJump(arrow);
+    }, 1500);
+  };
+
+
+
+  //слайдер
+
+
+let sliderArrowLeft = document.querySelector('.slider-arrow-left');
+let sliderArrowRight = document.querySelector('.slider-arrow-right');
+let sliderBlocks = document.querySelectorAll('.slider-block');
+let sliderInner = document.querySelector('.slider-inner');
+
+let sliderBlocksWidth = sliderBlocks[2].offsetWidth + 'px';
+
+
+sliderBlocks[0].style.width=0 + 'px';
+sliderBlocks[4].style.width=0 + 'px';
+
+let sliderArrowsSvgs = document.querySelectorAll('.slider-arrows-svg path');
+console.log(sliderArrowsSvgs);
+sliderArrowRight.addEventListener('hover',function(){
+  sliderArrowsSvgs[1].style.stroke='#FAFF00';
+});
+
+
+
+  sliderArrowRight.addEventListener('click', function (){
+    sliderBlocks = document.querySelectorAll('.slider-block');
+
+    sliderBlocks[0].style.width=sliderBlocksWidth;
+    sliderBlocks[3].style.width=0 + 'px';
+    sliderBlocks[1].classList.add('slider-block-mid');
+    sliderBlocks[2].classList.remove('slider-block-mid');
+    sliderBlocks[4].innerHTML=sliderBlocks[3].innerHTML;
+
+
+    setTimeout(function(){
+      sliderBlocks[4].id="last_slide";
+      sliderBlocks[0].id="first_slide";
+
+      let clone = sliderBlocks[4].cloneNode(true);
+      sliderBlocks[4].remove();
+
+      sliderBlocks = document.querySelectorAll('.slider-block');
+      sliderInner.insertBefore(clone, sliderBlocks[0]);
+      sliderBlocks[0].id="w";
+      sliderBlocks[1].id="w";
+  }, 10);
+
+/*   sliderArrowRight.removeEventListener('click',sliderArrowLeftFunction()); */
+  });
+
+  sliderArrowLeft.addEventListener('click',function /* sliderArrowLeftFunction */(){
+    sliderBlocks = document.querySelectorAll('.slider-block');
+
+    sliderBlocks[4].style.width=sliderBlocksWidth;
+    sliderBlocks[1].style.width=0 + 'px';
+    sliderBlocks[3].classList.add('slider-block-mid');
+    sliderBlocks[2].classList.remove('slider-block-mid');
+    sliderBlocks[0].innerHTML=sliderBlocks[1].innerHTML;
+
+    setTimeout(function(){
+      sliderBlocks[0].id="first_slide";
+      sliderBlocks[4].id="last_slide";
+
+      let clone = sliderBlocks[0].cloneNode(true);
+      sliderInner.append(clone);
+      sliderBlocks[0].remove();
+
+      sliderInner.appendChild(clone); 
+      sliderBlocks = document.querySelectorAll('.slider-block');
+      sliderBlocks[4].id="w";
+      sliderBlocks[3].id="w";
+    }, 10);
+
+  });
+
+  function get(){
+    sliderInner = document.querySelector('.slider-inner');
+    var div = document.createElement('div');
+    sliderInner.appendChild(div); 
+    console.log(div);
+
+  }
