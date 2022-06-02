@@ -31,164 +31,455 @@ const params = {
   }
 
 
-  let rootBlock = document.getElementById('root');
 
   let header=document.querySelector('.header');
   let container=document.querySelector('.container');
   let headerBg=document.querySelector('.header-bg');
 
   let headerRight=document.querySelector('.header__right');
-  let headerLeftEdupartner=document.querySelector('.header__left-edupartner');
-  let headerLeftEduexp=document.querySelector('.header__left-eduexp');
-  let headerRightTitle=document.querySelector('.header__right-title');
   let headerRightBlockss = document.querySelector('.header__right-blocks');
 
   let headerRightBlocks = document.querySelectorAll('.header__right-block');
+  let headerBgs=document.querySelectorAll('.header-bg');
 
 
+  let headerRightBlocksLength = headerRightBlocks.length;
+  let flagAn = 0;//кнопки не работают пока идет анимация
+  headerRightBlocks[0].addEventListener('click',function headerRightBlocksFirst(){
+    if (flagAn == 0){
+    this.style.width=0;
+    this.style.marginRight=0;
+    this.style.paddingLeft=0;
+    headerRightBlockAnimatin(); 
+    let idThisBlock = this.id;
+    headerBgAnimation(0);
+    contentChange(idThisBlock);
+    removeBtns();
+    newContent(this.id);
+    setTimeout(function(){ 
+      headerRightTransition();
+      setTimeout(function(){ 
+        headerRightBackAll(1);
+        headerRightBlocks[headerRightBlocksLength-1].style.paddingLeft=0 + 'px';
+        headerRightBlocks[headerRightBlocksLength-1].style.marginRight=0 + 'px';
+        let thisBLock = document.getElementById(idThisBlock);
+        thisBLock.style.width=headerRightBlockWidth+'px';
+        thisBLock.style.marginRight=20+'px';
+        thisBLock.style.paddingLeft=10+'px';
+        let headerBg = headerRightBlocks[3].querySelector('.header-bg');
+        headerBgFuncBack(headerBg);
+        toggleId(1);
+        setTimeout(function(){ 
+          headerRightBlocks[3].style.height=headerRightBlockHeight+'px';
+          headerRightTransition();
+          headerBgFuncBack(headerBg);
+          headerRightBlocks[1].style.height=headerRightBlockHeight + 'px';//не понял почему ломается где-то
+          setTimeout(function(){ 
+            addBtns();
+          }, 100);
+        }, 1000);
+        
+        
+      }, 300);
+    },200);
+  }
+  });
+
+  headerRightBlocks[1].addEventListener('click',function headerRightBlocksSecond(){
+    if (flagAn == 0){
+    this.style.width=0;
+    this.style.marginRight=0;
+    this.style.paddingLeft=0;
+    headerRightBlockAnimatin(); 
+    let idThisBlock = this.id;
+    headerBgAnimation(1);
+    contentChange(idThisBlock);
+    removeBtns();
+    newContent(this.id);
+    setTimeout(function(){ 
+      headerRightTransition();
+      setTimeout(function(){ 
+        headerRightBackAll(2);
+        headerRightBlocks[headerRightBlocksLength-1].style.paddingLeft=0 + 'px';
+        headerRightBlocks[headerRightBlocksLength-1].style.marginRight=0 + 'px';
+        let thisBLock = document.getElementById(idThisBlock);
+        thisBLock.style.width=headerRightBlockWidth+'px';
+        thisBLock.style.marginRight=20+'px';
+        thisBLock.style.paddingLeft=10+'px';
+        let headerBg = headerRightBlocks[3].querySelector('.header-bg');
+        headerBgFuncBack(headerBg);
+        toggleId(2);
+        setTimeout(function(){ 
+          headerRightBlocks[3].style.height=headerRightBlockHeight+'px';
+          headerRightTransition();
+          headerBgFuncBack(headerBg);
+          headerRightBlocks[1].style.height=headerRightBlockHeight + 'px';//не понял почему ломается где-то        
+          setTimeout(function(){ 
+            addBtns();
+          }, 100);
+        }, 1000);              
+      }, 300);
+    },200);
+  }
+  });
+
+  headerRightBlocks[2].addEventListener('click',function headerRightBlocksThree(){
+    if (flagAn == 0){
+    this.style.width=0;
+    this.style.marginRight=0;
+    this.style.paddingLeft=0;
+    headerRightBlockAnimatin(); 
+    let idThisBlock = this.id;
+    headerBgAnimation(2);
+    contentChange(idThisBlock);
+    removeBtns();
+    newContent(this.id);
+    setTimeout(function(){ 
+      headerRightTransition();
+      setTimeout(function(){ 
+        headerRightBackAll(3);
+        headerRightBlocks[headerRightBlocksLength-1].style.paddingLeft=0 + 'px';
+        headerRightBlocks[headerRightBlocksLength-1].style.marginRight=0 + 'px';
+        let thisBLock = document.getElementById(idThisBlock);
+        thisBLock.style.width=headerRightBlockWidth+'px';
+        thisBLock.style.marginRight=20+'px';
+        thisBLock.style.paddingLeft=10+'px';
+        let headerBg = headerRightBlocks[3].querySelector('.header-bg');
+        headerBgFuncBack(headerBg);
+        toggleId(3);
+        setTimeout(function(){ 
+          headerRightBlocks[3].style.height=headerRightBlockHeight+'px';
+          headerRightTransition();
+          headerBgFuncBack(headerBg);
+          headerRightBlocks[1].style.height=headerRightBlockHeight + 'px';//не понял почему ломается где-то
+          setTimeout(function(){ 
+            addBtns();
+          }, 100);
+        }, 1000);                
+      }, 300);
+    },200);
+  }
+  });
+
+  let firstSections=document.querySelectorAll('.first');
+  let secondSections=document.querySelectorAll('.second');
+  let thirdSections=document.querySelectorAll('.third');
+  let rootBlock = document.getElementById('root');
+  let headerLeftEdupartner=document.querySelector('.header__left-edupartner');
+  let headerLeftEduexp=document.querySelector('.header__left-eduexp');
+  let headerRightTitle=document.querySelector('.header__right-title');
+  let headerLeftSert = document.querySelector('.header__left-sert');
+  let headerLeftCenter = document.querySelector('.header__left-center');
+
+  function contentChange(str){
+    rootBlock.style.display = 'none';
+    headerLeftSert.classList.remove('header-show');
+    headerLeftCenter.classList.remove('header-show');
+    headerLeftEduexp.classList.remove('header-show');
+    headerLeftEdupartner.classList.remove('header-show');
+    headerRightTitle.classList.remove('header-show');
+    headerLeftSert.style.display = 'none';
+    headerLeftCenter.style.display = 'none';
+    headerLeftEduexp.style.display = 'none';
+    headerLeftEdupartner.style.display = 'none';
+    headerRightTitle.style.display = 'none';
+    if( str == 'header__right-platform'){
+      firstSections.forEach(function(firstSection) {
+        firstSection.style.display = 'block';
+      });
+      secondSections.forEach(function(secondSection) {
+        secondSection.style.display = 'none';
+      });
+      thirdSections.forEach(function(thirdSection) {
+        thirdSection.style.display = 'none';
+      });
+      
+      headerLeftEduexp.style.transform = 'translateY(30%)';
+      headerLeftEduexp.style.display = 'block';
+      setTimeout(function(){ 
+        headerLeftEduexp.style.transform = 'translateY(0%)';
+        headerLeftEduexp.classList.add('header-show');
+      }, 1000);
+
+    }else 
+    if( str == 'header__right-center'){
+      firstSections.forEach(function(firstSection) {
+        firstSection.style.display = 'none';
+      });
+      thirdSections.forEach(function(thirdSection) {
+        thirdSection.style.display = 'none';
+      });
+      secondSections.forEach(function(secondSection) {
+        secondSection.style.display = 'block';
+      });
+      headerLeftCenter.style.transform = 'translateY(30%)';
+      headerLeftCenter.style.display = 'block';
+      setTimeout(function(){ 
+        headerLeftCenter.style.transform = 'translateY(0%)';
+        headerLeftCenter.classList.add('header-show');
+      }, 1000);
+    }else 
+    if( str == 'header__right-sert'){
+      firstSections.forEach(function(firstSection) {
+        firstSection.style.display = 'none';
+      });
+      secondSections.forEach(function(secondSection) {
+        secondSection.style.display = 'none';
+      });
+      thirdSections.forEach(function(thirdSection) {
+        thirdSection.style.display = 'block';
+      });
+      headerLeftSert.style.transform = 'translateY(30%)';
+      headerLeftSert.style.display = 'block';
+      setTimeout(function(){ 
+        headerLeftSert.style.transform = 'translateY(0%)';
+        headerLeftSert.classList.add('header-show');
+      }, 1000);
+    }else 
+    if( str == 'header__right-main'){
+      firstSections.forEach(function(firstSection) {
+        firstSection.style.display = 'none';
+      });
+      secondSections.forEach(function(secondSection) {
+        secondSection.style.display = 'none';
+      });
+      thirdSections.forEach(function(thirdSection) {
+        thirdSection.style.display = 'none';
+      });
+      headerLeftEdupartner.style.transform = 'translateY(70%)';
+      headerLeftEdupartner.style.display = 'block';
+      headerRightTitle.style.transform = 'translateY(30%)';
+      headerRightTitle.style.display = 'block';
+      rootBlock.style.display = 'block';
+      setTimeout(function(){ 
+        headerLeftEdupartner.style.transform = 'translateY(0%)';
+        headerLeftEdupartner.classList.add('header-show');
+        headerRightTitle.style.transform = 'translateY(0%)';
+        headerRightTitle.classList.add('header-show');
+      }, 1000);
+    }
+  }
+
+  function removeBtns(){
+    flagAn = 1;
+  }
+  function addBtns(){
+    flagAn = 0;
+  }
+
+  //смена id
+
+  function toggleId(z){
+    let flafId ='';
+    if(z==1){
+      flafId = headerRightBlocks[0].id;
+      headerRightBlocks[0].id = headerRightBlocks[1].id;
+      headerRightBlocks[1].id = headerRightBlocks[2].id;
+    }
+    else if(z==2){
+      flafId = headerRightBlocks[1].id;
+      headerRightBlocks[1].id = headerRightBlocks[2].id;
+    }
+    else if(z==3){
+      flafId = headerRightBlocks[2].id;
+    }
+    for(let i = 2;i<headerRightBlocksLength-1;i++){
+      headerRightBlocks[i].id = headerRightBlocks[i+1].id;
+    }  
+    console.log(flafId);
+    headerRightBlocks[headerRightBlocksLength-1].id = flafId;
+  }
+  //четвертый блок увеличивается и выдвигается
   function headerRightBlockAnimatin(){
     headerRightBlocks[3].style.display = 'block';
-    /* headerRightBlockss.style.marginRight = '280' + 'px'; */
     headerRightBlocks[3].style.opacity = '1';
-    headerRightBlocks[3].style.width =  headerRightBlocks[2].offsetWidth+'px';
-    if(header.offsetWidth>1024){
-      headerRightBlocks[3].style.marginRight = '50'+'px';};
-    if(header.offsetWidth<1025){
-      headerRightBlocks[3].style.marginRight = '25'+'px';};
+    headerRightBlocks[3].style.width =  headerRightBlockWidth+'px';
+    headerRightBlocks[3].style.marginRight = 20+'px';
+    headerRightBlocks[3].style.paddingLeft = 10+'px';
+    /* headerRightBlocks[1].style.paddingLeft=10 + 'px';
+    headerRightBlocks[1].style.marginRight=20 + 'px'; *///не понял почему ломается где-то
+  }
+  //мгновенное изменение блока
+  function headerRightTransition(){
+    headerRightBlocks.forEach(function(headerRightBlock) {
+      headerRightBlock.classList.toggle('transition_zero');
+    });
+  }
+  //изменение контента в зависимости от id кнопки
+  function newContent(content){
+    if (content=='header__right-platform'){
+    }else if (content=='header__right-center'){
+    }else if (content=='header__right-sert'){
+    }else if (content=='header__right-main'){
+    }
   }
 
-  function headerRightBlocBack(){
-    let flagRightBlock = headerRightBlocks[0].innerHTML;
-    headerRightBlocks[0].innerHTML=headerRightBlocks[1].innerHTML;
-    headerRightBlocks[1].innerHTML=headerRightBlocks[2].innerHTML;
-    headerRightBlocks[2].innerHTML=headerRightBlocks[3].innerHTML;
-    headerRightBlocks[3].innerHTML=flagRightBlock;
+  //незаметный возврат\изменение контента + 
+  function headerRightBackAll(z){
+    let flagRightBlock ='';
+    let flafId ='';
+    if(z==1){
+      var img = $( headerRightBlocks[0]).css('background-image');
+      headerRightBlocks[0].style.backgroundImage = $( headerRightBlocks[1]).css('background-image');    
+      headerRightBlocks[1].style.backgroundImage = $( headerRightBlocks[2]).css('background-image');
+      flagRightBlock = headerRightBlocks[0].innerHTML;
+      headerRightBlocks[0].innerHTML=headerRightBlocks[1].innerHTML;
+      headerRightBlocks[1].innerHTML=headerRightBlocks[2].innerHTML;
+    }
+    else if(z==2){
+      var img = $( headerRightBlocks[1]).css('background-image');
+      headerRightBlocks[1].style.backgroundImage = $( headerRightBlocks[2]).css('background-image');
+      flagRightBlock = headerRightBlocks[1].innerHTML;
+      headerRightBlocks[1].innerHTML=headerRightBlocks[2].innerHTML;
+    }
+    else if(z==3){
+      var img = $( headerRightBlocks[2]).css('background-image');
+      flagRightBlock = headerRightBlocks[2].innerHTML;
+    }
+    for(let i = 2;i<headerRightBlocksLength-1;i++){
+      headerRightBlocks[i].style.backgroundImage = $( headerRightBlocks[i+1]).css('background-image');
+      headerRightBlocks[i].innerHTML=headerRightBlocks[i+1].innerHTML;
+
+    }  
+    headerRightBlocks[headerRightBlocksLength-1].style.backgroundImage = img;
+    headerRightBlocks[headerRightBlocksLength-1].innerHTML=flagRightBlock;
+    headerRightBlocks[3].style.marginRight=0 + 'px';
     
-    var img = $( headerRightBlocks[0]).css('background-image');
-    console.log( img);
-
-
-
-
-    headerRightBlocks[0].style.backgroundImage = $( headerRightBlocks[1]).css('background-image');
-    
-    headerRightBlocks[1].style.backgroundImage = $( headerRightBlocks[2]).css('background-image');
-    headerRightBlocks[2].style.backgroundImage = $( headerRightBlocks[3]).css('background-image');
-    headerRightBlocks[3].style.backgroundImage = img;
-
-    headerRightBlocks[3].classList.add('transition_zero');
+    headerRightBlocks[3].style.paddingLeft=0;
     headerRightBlocks[3].style.width = '0';
     headerRightBlocks[3].style.opacity = '0';
-    
-    if(header.offsetWidth>1200){
-      headerRightBlocks[3].style.marginRight = '20'+'px';};
-    if(header.offsetWidth>1024&& header.offsetWidth<1201){
-      headerRightBlocks[3].style.marginRight = '10'+'px';};
-    if(header.offsetWidth>768&& header.offsetWidth<1025){
-      headerRightBlocks[3].style.marginRight = '0'+'px';};
-
-    setTimeout(function(){ 
-      headerRightBlocks[3].classList.remove('transition_zero');
-     
-    }, 100);
-
+    for(let i = 0;i<3;i++){
+      headerRightBlocks[i].style.paddingLeft=10 + 'px';
+      headerRightBlocks[i].style.marginRight=20 + 'px';
+    }  
+    for(let i = 3;i<headerRightBlocksLength-1;i++){
+      headerRightBlocks[i].style.paddingLeft=0 + 'px';
+      headerRightBlocks[i].style.marginRight=0 + 'px';
+    }  
   }
 
-  function headerBgFuncBack(backgroundBlcok){
-    
-    backgroundBlcok.style.zIndex='-1';
-    backgroundBlcok.style.height=1+"px";
-    backgroundBlcok.style.width=1+"px";
-    backgroundBlcok.style.marginTop=0+ 'px';
-    backgroundBlcok.style.marginLeft=0+ 'px';
-    backgroundBlcok.style.borderRadius=20+ 'px';
-    setTimeout(function(){ 
-      backgroundBlcok.style.display='block';
-     
-    }, 100);
-  }
-
-  function headerBgFunc(backgroundBlcok){
-    backgroundBlcok.style.zIndex='2';
-
+function headerBgAnimation(z){
+  headerBgs=document.querySelectorAll('.header-bg');
+  if(z==0){
+    headerBgs[z].style.zIndex='2';
     headerRightBlockAnimatin();
-    backgroundBlcok.style.borderRadius='0';
-    backgroundBlcok.style.height=header.offsetHeight+"px";
-    backgroundBlcok.style.width=header.offsetWidth+"px";
+    headerBgs[z].style.borderRadius='0';
+    headerBgs[z].style.height=header.offsetHeight+"px";
+    headerBgs[z].style.width=header.offsetWidth+"px";
     if(header.offsetWidth>1200){
-    backgroundBlcok.style.marginTop='-356' + 'px';
-
-    backgroundBlcok.style.marginLeft=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 +210+ 'px';};
+      headerBgs[z].style.top='-356' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 -0+ 'px';};
     if(header.offsetWidth>1024&& header.offsetWidth<1201){
-    backgroundBlcok.style.marginTop='-356' + 'px';
-
-    backgroundBlcok.style.marginLeft=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 +150+ 'px';};
+      headerBgs[z].style.top='-356' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2-20 + 'px';};
     if(header.offsetWidth>768&& header.offsetWidth<1025){
-    backgroundBlcok.style.marginTop='-260' + 'px';
-
-    backgroundBlcok.style.marginLeft=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 +120+ 'px';};
+      headerBgs[z].style.top='-260' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2+10 + 'px';};
+      if(header.offsetWidth>600&& header.offsetWidth<769){
+        headerBgs[z].style.top='-280' + 'px';
+        headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2+ 'px';};
+        if(header.offsetWidth>480&& header.offsetWidth<601){
+          headerBgs[z].style.top='-240' + 'px';
+          headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2+ 'px';};
+        if(header.offsetWidth<481){
+          headerBgs[z].style.top='-230' + 'px';
+          headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2+ 'px';};
+    setTimeout(function(){ 
+      headerBgs[z].style.display='none';
+      header.style.backgroundImage = $( headerBgs[z]).css('background-image');
+      headerBgs[z].style.display='block';
+    }, 500);
+  }
+  else if(z==1){
+    headerRightBlocks[0].style.zIndex=5;
+    headerBgs[z].style.zIndex='2';
+    headerRightBlockAnimatin();
+    headerBgs[z].style.borderRadius='0';
+    headerBgs[z].style.height=header.offsetHeight+"px";
+    headerBgs[z].style.width=header.offsetWidth+"px";
+    if(header.offsetWidth>1200){
+      headerBgs[z].style.top='-356' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 -200+ 'px';};
+    if(header.offsetWidth>1024&& header.offsetWidth<1201){
+      headerBgs[z].style.top='-356' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 -160+ 'px';};
+    if(header.offsetWidth>768&& header.offsetWidth<1025){
+      headerBgs[z].style.top='-260' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2-120+ 'px';};
+    if(header.offsetWidth>600&& header.offsetWidth<769){
+      headerBgs[z].style.top='-280' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2-120+ 'px';};
+      if(header.offsetWidth>480&& header.offsetWidth<601){
+        headerBgs[z].style.top='-240' + 'px';
+        headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2-120+ 'px';};
+       if(header.offsetWidth<481){
+          headerBgs[z].style.top='-230' + 'px';
+          headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2-100+ 'px';};
 
         
     setTimeout(function(){ 
-      backgroundBlcok.style.display='none';
-      header.style.backgroundImage = "url('https://eduexp.ru/wp-content/uploads/2021/09/notebook-bg.png')";
-    }, 1000);
-    headerBg.style.zIndex='-1';
-    
+      headerBgs[z].style.display='none';
+      header.style.backgroundImage = $( headerBgs[z]).css('background-image');
+      headerBgs[z].style.display='block';
+      headerRightBlocks[0].style.zIndex=4;
+    }, 500);
   }
+  else if(z==2){
+    headerRightBlocks[0].style.zIndex=5;
+    headerRightBlocks[1].style.zIndex=5;
+    headerBgs[z].style.zIndex='2';
+    headerRightBlockAnimatin();
+    headerBgs[z].style.borderRadius='0';
+    headerBgs[z].style.height=header.offsetHeight+"px";
+    headerBgs[z].style.width=header.offsetWidth+"px";
+    if(header.offsetWidth>1200){
+      headerBgs[z].style.top='-356' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 -400+ 'px';};
+    if(header.offsetWidth>1024&& header.offsetWidth<1201){
+      headerBgs[z].style.top='-356' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2 -300+ 'px';};
+    if(header.offsetWidth>768&& header.offsetWidth<1025){
+      headerBgs[z].style.top='-260' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)-(header.offsetWidth -container.offsetWidth)/2-240+ 'px';};
+    if(header.offsetWidth>600&& header.offsetWidth<769){
+      headerBgs[z].style.top='-280' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2-240+ 'px';};
+    if(header.offsetWidth>480&& header.offsetWidth<601){
+      headerBgs[z].style.top='-240' + 'px';
+      headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2-240+ 'px';};
+      if(header.offsetWidth<481){
+        headerBgs[z].style.top='-230' + 'px';
+        headerBgs[z].style.left=-(container.offsetWidth-headerRight.offsetWidth)/2-200+ 'px';};
 
-    headerRightBlocks[0].addEventListener('click',function(){
+    setTimeout(function(){ 
+      headerBgs[z].style.display='none';
+      header.style.backgroundImage = $( headerBgs[z]).css('background-image');
+      headerBgs[z].style.display='block';
+      headerRightBlocks[0].style.zIndex=4;
+      headerRightBlocks[1].style.zIndex=4;
+    }, 500);
+  }
+}
 
-
-        headerLeftEdupartner.style.display = 'block';
-        headerRightTitle.style.display = 'block';
-        this.style.display='none';
-
-        setTimeout(function(){ 
-          headerBgFunc(headerBg);
-        }, 100); 
-
-
-
-        rootBlock.style.display='none';
-        headerLeftEdupartner.style.display='none';
-        headerRightTitle.style.display='none';
-        setTimeout(function(){ 
-          headerLeftEduexp.style.display='block';
-  
-          headerLeftEdupartner.classList.remove('header-show');
-          headerRightTitle.classList.remove('header-show');
-        }, 600);
-
-        setTimeout(function(){ 
-          headerLeftEduexp.classList.add('header-show');
-          headerRightBlocBack();
-          headerBgFuncBack(headerBg)
-        headerRightBlocks[0].style.display = 'block';
-        }, 1500);
-    }); 
-
-
-
-
-    
-
+function headerBgFuncBack(headerBg){
+  headerRightBlocks.forEach(function(headerRightBlock) {});
+  headerBg.style.zIndex='-1';
+  headerBg.style.zIndex='-1';
+  headerBg.style.height=1+"px";
+  headerBg.style.width=1+"px";
+  headerBg.style.top=0+ 'px';
+  headerBg.style.left=0+ 'px';
+  headerBg.style.borderRadius=20+ 'px';
+}
+  let headerRightBlockWidth =  headerRightBlocks[1].offsetWidth;
+  let headerRightBlockHeight =  headerRightBlocks[1].offsetHeight;
   let opportunitiesRight = document.querySelectorAll('.opportunities__right');
-  console.log(opportunitiesRight[2].offsetWidth);
   opportunitiesRight[5].style.width=opportunitiesRight[2].offsetWidth +'px';
   opportunitiesRight[4].style.width=opportunitiesRight[2].offsetWidth +'px';
-  console.log(opportunitiesRight[5].offsetWidth);
- 
-  
-
 
   //звезды высотой родительского блока
   let root=document.querySelector('.root');
-  
   root.style.height=header.offsetHeight +'px';
-
-
-
 //прыжки стрелок
 
   let videoArrowRights = document.querySelectorAll('.video-arrow-right');
@@ -233,18 +524,12 @@ const params = {
       arrowRightJump(arrow);
     }, 1500);
   };
-
-
-
   //слайдер
-
 
 let sliderArrowLeft = document.querySelector('.slider-arrow-left');
 let sliderArrowRight = document.querySelector('.slider-arrow-right');
 let sliderBlocks = document.querySelectorAll('.slider-block');
 let sliderInner = document.querySelector('.slider-inner');
-
-
 
 sliderBlocks[0].style.width=0 + 'px';
 sliderBlocks[4].style.width=0 + 'px';
@@ -348,8 +633,20 @@ diplomArrowRight.addEventListener('hover',function(){
 
 
 
+let diplomBlocksWidth = 0;
+if(header.offsetWidth>1200){
+  diplomBlocksWidth = 380 + 'px';}
+else if(header.offsetWidth>1024&& header.offsetWidth<1201){
+  diplomBlocksWidth = 300 + 'px';}
+else if(header.offsetWidth>768&& header.offsetWidth<1025){
+  diplomBlocksWidth = 240 + 'px';}
+else if(header.offsetWidth>600&& header.offsetWidth<769){
+  diplomBlocksWidth = 180 + 'px';}
+else if(header.offsetWidth>480&& header.offsetWidth<601){
+  diplomBlocksWidth = 145 + 'px';}
+else if(header.offsetWidth<481){
+  diplomBlocksWidth = 100 + 'px';};
 diplomArrowRight.addEventListener('click', function (){
-  let diplomBlocksWidth = diplomBlocks[2].offsetWidth + 'px';
     diplomBlocks = document.querySelectorAll('.diplom-block');
 
     diplomBlocks[0].style.width=diplomBlocksWidth;
@@ -372,11 +669,9 @@ diplomArrowRight.addEventListener('click', function (){
       diplomBlocks[1].id="w";
   }, 10);
 
-/*   sliderArrowRight.removeEventListener('click',sliderArrowLeftFunction()); */
   });
 
-  diplomArrowLeft.addEventListener('click',function /* sliderArrowLeftFunction */(){
-    let diplomBlocksWidth = diplomBlocks[2].offsetWidth + 'px';
+  diplomArrowLeft.addEventListener('click',function (){
     diplomBlocks = document.querySelectorAll('.diplom-block');
 
     diplomBlocks[4].style.width=diplomBlocksWidth;

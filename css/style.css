@@ -26,6 +26,9 @@ color: #FFFFFF;
 	margin-left: auto;
 	margin-right: auto;
 }
+.first,.second,.third{
+	display: none;
+}
 header {
   margin: 0;
   width: 100%;
@@ -142,7 +145,7 @@ header {
 	display: flex;
 	align-items: center;
 }
-.header__left-center-text{
+.header__left-center-text,.header__left-sert-text{
 	max-width: 420px;
 
 	font-family: 'Montserrat';
@@ -152,11 +155,22 @@ header {
 	line-height: 31px ;
 	color: rgba(255, 255, 255, 0.8);
 }
-.header__left-center-top .header__left-center-text{
+.header__left-center-top .header__left-center-text,.header__left-sert-text{
 	width: 263px;
 	position: relative;
 }
-.header__left-center-top .header__left-center-text::after{
+.header__left-sert-text{
+	width: auto;
+}
+.header__left-sert{
+	margin-top: 13px;
+	
+	display: none;
+	transition: 1s;
+	transform: translateY(70%);
+	opacity: 0;
+}
+.header__left-center-top .header__left-center-text::after,.header__left-sert-text::after{
 	position: absolute;
 	content:'';
 	width: 80px;
@@ -168,7 +182,7 @@ header {
 .header__left-center-image{
 
 }
-.header__left-center-title{
+.header__left-center-title,.header__left-sert-title{
 margin-bottom: 30px;
 	width: 427px;
 font-family: 'Montserrat';
@@ -179,12 +193,16 @@ line-height: 49px;
 
 color: #FFFFFF;
 }
-
+.header__left-sert-title{
+	margin-top: 65px;
+	margin-bottom: 50px;
+}
 
 
 
 .header__right{
 	margin-bottom: 215px;
+
 }
 
 .header__right-top{
@@ -197,7 +215,7 @@ color: #FFFFFF;
 	text-transform: uppercase;
 	margin-bottom: 65px;
 
-
+	margin-left: 16px;
 	
 	display: none;
 	transition: 1s;
@@ -208,20 +226,25 @@ color: #FFFFFF;
 
 .header__right-blocks{
 display: flex;
-margin-right:50px;
+margin-right:80px;
 transition: 1s;
-
+	width: 610px;
+	justify-content: flex-end;
 }
 
 .header__right-block{
 	width: 180px;
 	height: 280px;
 	border-radius:20px;
-	padding-left: 10px;
 	padding-top: 160px;
-	margin-right: 20px;
 	position: relative;
-
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	transition: 0.5s;
+	border-radius: 20px;
+	z-index: 4;
+	padding-left: 10px;
 }
 .header__right-block:hover{
 	cursor: pointer;
@@ -233,59 +256,94 @@ transition: 1s;
 	width: 25px;
 	background-color: #FAFF00;
 	top: 150px;
+	left: 10px;
 }
 
 
 
 .header-bg{
 	position: absolute;
-	
-
+	top: 0;
+	left: 0;
 	width: 1px;
 	height: 1px;
-	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook-bg.png);
 	/* background-repeat: no-repeat;
 	background-size: cover; */
 	background-position: center center;
-	transition: 1s;
+	transition: 0.4s;
 	z-index: -1;
 	border-radius: 20px;
 }
 
-.header__right-block:nth-child(2){
+#header__right-platform{
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook_1.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	transition: 1s;
-	border-radius: 20px;
+	padding-left: 10px;
+	margin-right: 20px;
 }
-.header__right-block:nth-child(3){
+#header__right-platform .header-bg{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook-bg.png);
+
+}
+#header__right-center{
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/book.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
+	padding-left: 10px;
+	margin-right: 20px;
 }
-.header__right-block:nth-child(4){
-	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/sert_1.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
+#header__right-center .header-bg{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/center-header.png);
 }
-.header__right-block:nth-child(5){
-	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/edupartner.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	/* display: none; */
+#header__right-sert{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/sert_1.png);/* 
+	padding-left: 10px;
+	margin-right: 20px; */
+}
+#header__right-sert .header-bg{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/sert-header.png);
+
+}
+.header__right-block:nth-child(4),.header__right-block:nth-child(5),.header__right-block:nth-child(6){ 
 	width: 0;
-	transition: 1s;
 	opacity: 0;
 	overflow: hidden;
+	margin-right: 0;
+	padding-left: 0;
 
-	
 }
-.header__right-block:nth-child(5).transition_zero{
+#header__right-main{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/edupartner.png);
+	/* display: none; *//* 
+	width: 0;
+	opacity: 0;
+	overflow: hidden;
+	margin-right: 0;
+	padding-left: 0; */
+}
+#header__right-main .header-bg{
+	
+	background: #1D1D1D;
+
+}
+#five{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook_1.png);/* 
+	padding-left: 10px;
+	margin-right: 20px; */
+}
+#five .header-bg{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/notebook-bg.png);
+
+}
+#six{/* 
+	padding-left: 10px;
+	margin-right: 20px; */
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/book.png);
+
+}
+#six .header-bg{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/center-header.png);
+
+}
+
+.transition_zero{
 
 	transition: 0s;
 }
@@ -585,6 +643,11 @@ line-height: 21px;
 	margin-top: 150px;
 }
 
+.video-arrow-block{
+	width: 335px;
+	display: flex;
+	justify-content: center;
+}
 
 .video-btn{
 	margin-bottom: 50px;
@@ -732,7 +795,7 @@ color: rgba(255, 255, 255, 0.95);
 
 
 
-.license{
+.license,.system{
 	
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/license_center.png);
 	background-repeat: no-repeat;
@@ -779,7 +842,7 @@ margin-bottom: 30px;
 
 
 
-.reasons{
+.reasons,.sert_about{
 	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/white-blue.png);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -787,6 +850,10 @@ margin-bottom: 30px;
 	margin-bottom: 148px;
 	padding-bottom: 80px;
 	padding-top: 100px;
+}
+.sert_about{
+	background-image: url(https://eduexp.ru/wp-content/uploads/2021/09/sert-black.png);
+
 }
 .reasons__inner{
 
@@ -851,7 +918,10 @@ margin-bottom: 30px;
 
 }
 
+.reasons__right-text-bold{
+	font-weight: 700;
 
+}
 
 
 
@@ -946,6 +1016,7 @@ margin-bottom: 30px;
 	margin-bottom: 20px;
 	color: #0967A1;
 	cursor: pointer;
+	transition: 0.5s;
 }
 .docs_left-btn:hover{
 	
@@ -1072,7 +1143,7 @@ background-color:#0967A1;
 		width: 160px;
 		margin-bottom: 30px;
 	}
-	.header__left-txt::before,.header__left-center-text::before{
+	.header__left-txt::before,.header__left-center-text::after,.header__left-sert-text::after{
 		width: 40px;
 	}
 
@@ -1085,9 +1156,13 @@ background-color:#0967A1;
 	}
 
 
-
-
-	.header__right-title,.header__left-txt,.header__left-center-text {
+	.header__right-blocks{
+		width: 460px;
+	}
+	.header__right-title{
+		margin-left: 65px;
+	}
+	.header__right-title,.header__left-txt,.header__left-center-text,.header__left-sert-text {
 		font-size: 18px;
 		line-height: 24px
 	}
@@ -1095,11 +1170,11 @@ background-color:#0967A1;
 		width: 120px;
 		height: 187px;
 		padding-top: 95px;
-		padding-right: 10px;
 	}
 	.header-bg{
 	}
 	.header__right-text{
+		padding-right: 10px;
 		font-size: 8px;
 		line-height: 12px;
 	}
@@ -1113,7 +1188,7 @@ background-color:#0967A1;
 	.platform__left,.license-left {
 		width: 400px;
 	}
-	.platform__right-title,.opportunities-title,.video-title,.reasons-title,.license-title,.clients-title,.docs-title,.header__left-center-title {
+	.platform__right-title,.opportunities-title,.video-title,.reasons-title,.license-title,.clients-title,.docs-title,.header__left-center-title,.header__left-sert-title {
 		font-size: 30px;
     	line-height: 40px;
 	}
@@ -1154,24 +1229,26 @@ background-color:#0967A1;
 	.video-title::after{
 		top: 50px;
 	}
+	.video-arrow-block{
+		width: 165px;
+	}
 	.video-arrow-right,.video-arrow-left{
 		width: 100px;
 		height: 40px;
 	}
 	
 	.video-text{
-		width: 270px;
+		width: 330px;
 		margin-right: 0;
-		margin-left: auto;
 	}
 	.video-text-mid{
 		margin-left: 0;
-		margin-right: auto;
 	}
 	.video-block{
 		margin-top: 50px;
 		margin-left: 20px;
 		margin-right: 20px;
+		justify-content: space-between;
 	}
 
 	.video-btn{
@@ -1230,7 +1307,7 @@ background-color:#0967A1;
 	.header__right-blocks{
 		margin-right: 0;
 	}
-	.header__right-title, .header__left-txt,.header__left-center-text {
+	.header__right-title, .header__left-txt,.header__left-center-text,.header__left-sert-text {
 		font-size: 16px;
 		line-height: 18px;
 		margin-bottom: 20px;
@@ -1239,6 +1316,10 @@ background-color:#0967A1;
 		font-size: 38px;
 		line-height: 46px;
 	}
+	.header__left-sert-title {
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
 	.header__left-text {
 		font-size: 30px;
 		line-height: 36px;
@@ -1246,7 +1327,7 @@ background-color:#0967A1;
 	.header__left-image {
 		top: -147px;
 		left: 44px;
-		width: 200px;
+		width: 170px;
 	}
 	.header__right-top{
 		height: auto;
@@ -1254,13 +1335,19 @@ background-color:#0967A1;
 	.header__right {
 		margin-bottom: 200px;
 	}
+	.header__right-title{
+		margin-left: 0;
+	}
+	.header__right-blocks{
+		width: 372px;
+	}
 	.platform__inner,.slider-inner{
 		height: auto;
 		padding-top: 50px;
 		justify-content: space-around;
 		
 	}
-	.platform__right-title, .opportunities-title, .video-title,.reasons-title,.license-title,.clients-title,.docs-title,.header__left-center-title {
+	.platform__right-title, .opportunities-title, .video-title,.reasons-title,.license-title,.clients-title,.docs-title,.header__left-center-title,.header__left-sert-title {
 		font-size: 22px;
 		line-height: 30px;
 	}
@@ -1280,7 +1367,7 @@ background-color:#0967A1;
 	}
 	.opportunities__left-text, .opportunities-comment,.reasons__left-text {
 		max-width: 489px;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 24px;
 	}
 	.opportunities-title,.video-title{
@@ -1289,6 +1376,8 @@ background-color:#0967A1;
 	}
 	.opportunities-title::before{
 		top: 40px;
+		width: 90px;
+		height: 5px;
 	}
 	.opportunities-block {
 		padding-top: 5px;
@@ -1353,10 +1442,10 @@ background-color:#0967A1;
 
 
 
-	.header__left-center-text{
+	.header__left-center-text,.header__left-sert-text{
 		max-width: 225px;
 	}
-	.header__left-center-title{
+	.header__left-center-title,.header__left-sert-title{
 		width: 350px;
 	}
 	.header__left-center-image{
@@ -1365,7 +1454,7 @@ background-color:#0967A1;
 
 
 
-	.license,.reasons{
+	.license,.reasons,.system,.sert_about{
 		padding: 100px 0;
 		height: auto;
 		margin-bottom: 50px;
@@ -1440,12 +1529,23 @@ background-color:#0967A1;
 		padding-top: 50px;
 	}
 	.header__left,.header__left-edupartner{
-		height: 200px;
+		height: auto;
 	}
 	.header__left-img{
-		width: 90px;
+		width: 70px;
+		margin-bottom: 10px;
 	}
-	.header__right-title, .header__left-txt,.header__left-center-text {
+	.header__left-edupartner{
+		height: 106px;
+	}
+	.header__left-sert{
+	}
+	.header__left-center-top .header__left-center-text::after, .header__left-sert-text::after {
+		width: 30px;
+		height: 3px;
+		top: -20px;
+	}
+	.header__right-title, .header__left-txt,.header__left-center-text,.header__left-sert-text {
 		font-size: 12px;
 		line-height: 15px;
 		margin-bottom: 10px;
@@ -1468,8 +1568,10 @@ background-color:#0967A1;
 		margin-right: auto;
 		margin-top: 30px;
 	}
+	.header__right-blocks{
+		justify-content: flex-end;}
 	.header{
-		height: auto;
+		height: 500px;
 	}
 
 
@@ -1511,7 +1613,7 @@ background-color:#0967A1;
 		margin-bottom: 10px;
 		margin-top: 10px;
 	}
-	.license,.reasons,.clients,.docs{
+	.license,.reasons,.clients,.docs,.system,.sert_about{
 		padding: 50px 0;
 	}
 	.clients_block{
@@ -1548,7 +1650,10 @@ background-color:#0967A1;
 		margin-right: 0;
 
 	}
-	
+	.platform__right-title, .opportunities-title, .video-title, .reasons-title, .license-title, .clients-title, .docs-title, .header__left-center-title, .header__left-sert-title {
+		font-size: 18px;
+		line-height: 24px;
+	}
 	.video-arrow-right, .video-arrow-left{
 		margin-top: 25px;
 	}
@@ -1579,10 +1684,13 @@ background-color:#0967A1;
 		margin-left: 30px;
 	}
 	.reasons__right {
-		max-width: 50%;
+		max-width: 45%;
 	}
 	.license-right{
 		margin-top: 0;
+	}
+	.clients-title {
+		width: 147px;
 	}
 	.diplom-block {
 		width: 145px;
@@ -1613,9 +1721,12 @@ background-color:#0967A1;
 	.header__right-block {
 		width: 82px;
 	}
-	.platform__right-title, .opportunities-title, .video-title,.reasons-title,.license-title,.clients-title,.docs-title,.header__left-center-title  {
-		font-size: 16px;
-		line-height: 20px;
+	.header__right-blocks {
+		width: 295px;
+	}
+	.platform__right-title, .opportunities-title, .video-title,.reasons-title,.license-title,.clients-title,.docs-title,.header__left-center-title,.header__left-sert-title  {
+		font-size: 12px;
+		line-height: 16px;
 	}
 	.platform__left, .platform__right,.license-left,.license-right {
 		width: 140px;
@@ -1625,7 +1736,7 @@ background-color:#0967A1;
 		line-height: 14px;
 	}
 	.opportunities__left-text, .opportunities-comment,.reasons__left-text {
-		font-size: 14px;
+		font-size: 10px;
 		line-height: 18px;
 		max-width: 130px;
 	}
@@ -1660,7 +1771,7 @@ background-color:#0967A1;
 		font-size: 7px;
 		line-height:9px;
 	}
-	.header__left-center-title {
+	.header__left-center-title,.header__left-sert-title {
 		width: 289px;
 	}
 	.reasons-title{
@@ -1670,7 +1781,7 @@ background-color:#0967A1;
 		height: 40px;
 	}
 	.clients-title {
-		width: 131px;
+		width: 99px;
 	}
 	.diplom-block {
 		width: 100px;
