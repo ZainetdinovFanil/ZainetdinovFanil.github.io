@@ -47,6 +47,7 @@ const params = {
   let flagAn = 0;//кнопки не работают пока идет анимация
   headerRightBlocks[0].addEventListener('click',function headerRightBlocksFirst(){
     if (flagAn == 0){
+      headerRightBlockWidth =  this.offsetWidth;
     this.style.width=0;
     this.style.marginRight=0;
     this.style.paddingLeft=0;
@@ -87,6 +88,7 @@ const params = {
 
   headerRightBlocks[1].addEventListener('click',function headerRightBlocksSecond(){
     if (flagAn == 0){
+      headerRightBlockWidth =  this.offsetWidth;
     this.style.width=0;
     this.style.marginRight=0;
     this.style.paddingLeft=0;
@@ -125,6 +127,7 @@ const params = {
 
   headerRightBlocks[2].addEventListener('click',function headerRightBlocksThree(){
     if (flagAn == 0){
+      headerRightBlockWidth =  this.offsetWidth;
     this.style.width=0;
     this.style.marginRight=0;
     this.style.paddingLeft=0;
@@ -474,7 +477,56 @@ function headerBgFuncBack(headerBg){
 }
   let headerRightBlockWidth =  headerRightBlocks[1].offsetWidth;
   let headerRightBlockHeight =  headerRightBlocks[1].offsetHeight;
-  
+  window.addEventListener('resize',function(){
+    if(header.offsetWidth>1200){
+      headerRightBlockWidth = 180 + 'px';
+      headerRightBlockHeight =  280+'px';
+      sliderBlocksWidth = 380 + 'px';
+      diplomBlocksWidth= 380 + 'px';
+    }else if(header.offsetWidth>1024&& header.offsetWidth<1201){
+      headerRightBlockWidth =  120 + 'px';
+      headerRightBlockHeight =  187+'px'
+      sliderBlocksWidth = 300 + 'px';
+      diplomBlocksWidth= 300 + 'px';
+    }else if(header.offsetWidth>768&& header.offsetWidth<1025){
+      headerRightBlockWidth =  110 + 'px';
+      headerRightBlockHeight =  187+'px';
+      sliderBlocksWidth = 200 + 'px';
+      diplomBlocksWidth= 240 + 'px';
+    }else if(header.offsetWidth>600&& header.offsetWidth<769){
+      headerRightBlockWidth =  110 + 'px';
+      headerRightBlockHeight =  187+'px';
+      sliderBlocksWidth = 160 + 'px';
+      diplomBlocksWidth= 180 + 'px';
+    }else if(header.offsetWidth>480&& header.offsetWidth<601){
+      headerRightBlockWidth =  110 + 'px';
+      headerRightBlockHeight =  187+'px';
+      sliderBlocksWidth = 120 + 'px';
+      diplomBlocksWidth= 145 + 'px';
+    }else if(header.offsetWidth<481){
+      headerRightBlockWidth =  82 + 'px';
+      headerRightBlockHeight =  150+'px';
+      sliderBlocksWidth = 30 + '%';
+      diplomBlocksWidth= 100 + 'px';};
+
+      
+    sliderBlocks[3].style.width=sliderBlocksWidth;
+    diplomBlocks[3].style.width=diplomBlocksWidth;
+    sliderBlocks[1].style.width=sliderBlocksWidth;
+    diplomBlocks[1].style.width=diplomBlocksWidth;
+    sliderBlocks[2].style.width=sliderBlocksWidth;
+    diplomBlocks[2].style.width=diplomBlocksWidth;
+      rootHeight();
+      headerRightBlocks[0].style.width = headerRightBlockWidth;
+      headerRightBlocks[0].style.height = headerRightBlockHeight;
+      headerRightBlocks[1].style.width = headerRightBlockWidth;
+      headerRightBlocks[1].style.height = headerRightBlockHeight;
+      headerRightBlocks[2].style.width = headerRightBlockWidth;
+      headerRightBlocks[2].style.height = headerRightBlockHeight;
+      headerRightBlocks[3].style.height = headerRightBlockHeight;
+      console.log(headerRightBlockWidth);
+  });
+
   //звезды высотой родительского блока
   let root=document.querySelector('.root');
   function rootHeight(){
