@@ -510,6 +510,9 @@ function headerBgFuncBack(headerBg){
       diplomBlocksWidth= 100 + 'px';};
 
       
+    sliderBlocks = document.querySelectorAll('.slider-block');
+    diplomBlocks = document.querySelectorAll('.diplom-block');
+    sliderBlocks[0].style.width=0;
     sliderBlocks[3].style.width=sliderBlocksWidth;
     diplomBlocks[3].style.width=diplomBlocksWidth;
     sliderBlocks[1].style.width=sliderBlocksWidth;
