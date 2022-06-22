@@ -32,7 +32,9 @@ color: #FFFFFF;
 header {
   margin: 0;
   width: 100%;
-  height: 850px;
+  height: 100vh;
+  min-height: 850px;
+  max-height: 1200px;
   background: #1D1D1D;
   background-repeat: no-repeat;
   background-size: cover;
@@ -41,7 +43,7 @@ header {
 #root {
 	position: absolute;
 	width: 100%;
-	height: 850px;
+	height: 100%;
 	overflow: hidden;
 
   }
@@ -627,7 +629,7 @@ line-height: 21px;
 	padding-top: 120px;
 	display: block;
 	margin-left: auto;
-	width: 415px;
+	width: 545px;
 	position: relative;
 	transform: translate(0px, 50%);
 	opacity: 0;
@@ -942,6 +944,7 @@ margin-bottom: 30px;
 }
 .reasons-line{
 	border: 1px solid rgba(9, 103, 161, 0.5);
+	background-color:rgba(9, 103, 161, 0.5);
 	margin-bottom: 20px;
 	margin-top: 20px;
 }
@@ -1179,6 +1182,38 @@ background-color:#0967A1;
 
 
 
+
+.footer{
+	
+	background: #00304E;
+	padding-top: 70px;
+	padding-bottom: 50px;
+}
+.footer__items{
+	display: flex;
+	justify-content: space-between;
+	transform: translate(0px,50%);
+	opacity: 0;
+	transition: all 0.8s ease 0s;
+
+}
+
+.footer__item{
+	cursor: pointer;
+	width: 380px;
+	margin-bottom: 20px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	color: #E8E8E8;
+}
+
+
+
+
+
 /* Всплыв текста */
 
 .header-show{
@@ -1205,18 +1240,10 @@ background-color:#0967A1;
 
 
 
-
-
-
-
-
-
-
-
-
 @media (max-width: 1200px) {
 	.header{
-		height: auto;
+		min-height: 750px;
+		max-height: 1024px;
 
 	}
 	.header__left{
@@ -1290,7 +1317,7 @@ background-color:#0967A1;
     	line-height: 40px;
 	}
 
-	.platform__right-text,.opportunities__right-text,.try-btn,.slider-text,.slider-link,.video-btn,.license-text,.reasons__right-text,.docs_left-btn{
+	.platform__right-text,.opportunities__right-text,.try-btn,.slider-text,.slider-link,.video-btn,.license-text,.reasons__right-text,.docs_left-btn,.footer__item {
 		font-size: 16px;
 		line-height: 22px;
 	}
@@ -1321,7 +1348,7 @@ background-color:#0967A1;
 		padding-top: 80px;
 		display: block;
 		margin-left: auto;
-		margin-right: auto;
+		width: 350px;
 	}
 	.video-title::after{
 		top: 50px;
@@ -1391,11 +1418,17 @@ background-color:#0967A1;
 	.diplom-block{
 		width: 300px;
 	}
+	.footer__items{
+		justify-content: space-around;
+	}
+	.footer__item{
+		width: 270px;
+	}
 }
 
 @media (max-width: 1024px) {
 	.header{
-		height: 700px;
+		min-height: 700px;
 	}
 	.header__right-block {
 		margin-right: 5px;	
@@ -1448,7 +1481,7 @@ background-color:#0967A1;
 		font-size: 22px;
 		line-height: 30px;
 	}
-	.platform__right-text, .opportunities__right-text, .try-btn, .slider-text, .slider-link, .video-btn,.video-text,.license-text,.reasons__right-text,.docs_left-btn {
+	.platform__right-text, .opportunities__right-text, .try-btn, .slider-text, .slider-link, .video-btn,.video-text,.license-text,.reasons__right-text,.docs_left-btn,.footer__item {
 		font-size: 12px;
 		line-height: 16px;
 	}
@@ -1496,7 +1529,8 @@ background-color:#0967A1;
 		height: 44px;
 		padding: 10px 19px}
 	.video-block{
-		margin-top: 10px;
+		margin-top: 25px;
+		justify-content: space-around;
 	}
 	.video-video__mid,.video-video {
 		width: 270px;
@@ -1504,6 +1538,9 @@ background-color:#0967A1;
 	}
 	.video-arrow-right{
 		margin-right: 20px;
+	}
+	.video-title{
+		width: 320px;
 	}
 	.video-title::after{
 		top: 40px;
@@ -1621,6 +1658,13 @@ background-color:#0967A1;
 	.diplom-inner {
 		height: 355px;
 	}
+	.footer {
+		padding-top: 30px;
+		padding-bottom: 20px;
+	}
+	.footer__item {
+		width: 200px;
+	}
 }
 
 
@@ -1674,11 +1718,13 @@ background-color:#0967A1;
 	.header__right-blocks{
 		justify-content: flex-end;}
 	.header{
-		height: 500px;
+		min-height: 500px;
 	}
 
 
-	
+	.video-title {
+		width: 280px;
+	}
 	.video-arrow-right, .video-arrow-left{
 		margin-top: 80px;
 		width: 50px;
@@ -1745,6 +1791,9 @@ background-color:#0967A1;
 	.diplom-inner {
 		height: 360px;
 	}
+	.footer__item {
+		width: 150px;
+	}
 }
 
 @media (max-width: 600px) {
@@ -1762,6 +1811,9 @@ background-color:#0967A1;
 	.platform__right-title, .opportunities-title, .video-title, .reasons-title, .license-title, .clients-title, .docs-title, .header__left-center-title, .header__left-sert-title {
 		font-size: 18px;
 		line-height: 24px;
+	}
+	.video-title {
+		width: 230px;
 	}
 	.video-arrow-right, .video-arrow-left{
 		margin-top: 25px;
@@ -1849,7 +1901,7 @@ background-color:#0967A1;
 	.platform__left, .platform__right,.license-left,.license-right {
 		width: 140px;
 	}
-	.platform__right-text, .opportunities__right-text, .try-btn, .slider-text, .slider-link, .video-btn, .video-text,.license-text,.reasons__right-text,.docs_left-btn {
+	.platform__right-text, .opportunities__right-text, .try-btn, .slider-text, .slider-link, .video-btn, .video-text,.license-text,.reasons__right-text,.docs_left-btn,.footer__item  {
 		font-size: 10px;
 		line-height: 14px;
 	}

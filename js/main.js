@@ -200,6 +200,7 @@ const params = {
       
       headerLeftEduexp.style.transform = 'translateY(30%)';
       headerLeftEduexp.style.display = 'block';
+      header.style.height = 'auto';
       setTimeout(function(){ 
         headerLeftEduexp.style.transform = 'translateY(0%)';
         headerLeftEduexp.classList.add('header-show');
@@ -218,6 +219,7 @@ const params = {
       });
       headerLeftCenter.style.transform = 'translateY(30%)';
       headerLeftCenter.style.display = 'block';
+      header.style.height = 'auto';
       setTimeout(function(){ 
         headerLeftCenter.style.transform = 'translateY(0%)';
         headerLeftCenter.classList.add('header-show');
@@ -235,6 +237,7 @@ const params = {
       });
       headerLeftSert.style.transform = 'translateY(30%)';
       headerLeftSert.style.display = 'block';
+      header.style.height = 'auto';
       setTimeout(function(){ 
         headerLeftSert.style.transform = 'translateY(0%)';
         headerLeftSert.classList.add('header-show');
@@ -255,6 +258,8 @@ const params = {
       headerRightTitle.style.transform = 'translateY(30%)';
       headerRightTitle.style.display = 'block';
       rootBlock.style.display = 'block';
+      header.style.height = '100vh';
+      rootBlock.style.height = '100%';
       setTimeout(function(){ 
         headerLeftEdupartner.style.transform = 'translateY(0%)';
         headerLeftEdupartner.classList.add('header-show');
